@@ -188,14 +188,21 @@
 
          </main>
 
-          <script>
-              const purchaseButton = document.querySelector('.button');
+         <script>
+          function redirectAfterRegistration(event) {
+              // Запобігаємо стандартній поведінці форми (відправці)
+              event.preventDefault();
+  
+              // Отримуємо дані з форми, можна використовувати їх для відправки на сервер
+              const name = document.querySelector('input[name="name"]').value;
+              const email = document.querySelector('input[name="email"]').value;
+              const password = document.querySelector('input[name="password"]').value;
+  
+              // Переадресовуємо на сторінку з учетною записью
+              window.location.href = "account.html";
+          }
+      </script>
 
-purchaseButton.addEventListener('click', () => {
-   alert("Технічний ремонт");
-});
-
-          </script>
          <footer>
             &copy; 2023 Tvereza Chereshnya
         </footer>
