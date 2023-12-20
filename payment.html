@@ -259,7 +259,7 @@
                   </select>
                   <p id="price">Ціна: </p>
               </div>
-              <button class="purchase--btn" onclick="handlePayment()">Оплатити</button>
+              <button class="purchase--btn">Оплатити</button>
 
               </form>
               </div>
@@ -301,10 +301,6 @@ purchaseButton.addEventListener('click', () => {
     alert('Оплата успішно пройдена');
     alert("У випадку проблем, зв'яжіться з тех.підтримкою");
 });
-function handlePayment() {
-    // Зміна тексту кнопки на "оплачено"
-    document.querySelector('.purchase--btn').textContent = 'Оплачено';
-}
 
 </script>
 </body>
