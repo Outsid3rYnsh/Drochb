@@ -294,15 +294,16 @@
         
     });
 
-  const purchaseButton = document.querySelector('.purchase--btn');
+    const purchaseButton = document.querySelector('.purchase--btn');
 
- purchaseButton.addEventListener('click', () => {
+purchaseButton.addEventListener('click', () => {
     alert('Оплата успішно пройдена');
     alert("У випадку проблем, зв'яжіться з тех.підтримкою");
+    saveFormData(); // Викликайте saveFormData при кліці на кнопку "Оплатити"
 });
 
 function saveFormData() {
-  var form = document.getElementById("paymentForm");
+  var form = document.getElementById("paymentForm"); // Використовуйте ідентифікатор форми
   var formData = new FormData(form);
 
   // Створення об'єкта з FormData
@@ -316,12 +317,13 @@ function saveFormData() {
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify(formDataObject), // Використовуйте об'єкт formDataObject
+    body: JSON.stringify(formDataObject),
   })
   .then(response => response.text())
   .then(data => console.log(data))
   .catch(error => console.error('Error:', error));
 }
+
 
 </script>
 </body>
