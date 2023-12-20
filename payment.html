@@ -319,35 +319,21 @@
 });
 
 function saveFormData() {
-    var form = document.getElementById("paymentForm");
-    var formData = new FormData(form);
+  var form = document.getElementById("paymentForm");
+  var formData = new FormData(form);
 
-    // Отримати введені дані
-    var data = {};
-    formData.forEach((value, key) => {
-      data[key] = value;
-    });
+  fetch('http://localhost:3000/savePaymentData', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(Object.fromEntries(formData)),
+  })
+  .then(response => response.text())
+  .then(data => console.log(data))
+  .catch(error => console.error('Error:', error));
+}
 
-    // Конвертувати в JSON-рядок
-    var jsonData = JSON.stringify(data);
-
-    // Створити Blob з JSON-рядка
-    var blob = new Blob([jsonData], { type: "application/json" });
-
-    // Створити посилання для завантаження файлу
-    var a = document.createElement("a");
-    a.href = URL.createObjectURL(blob);
-    a.download = "payment_data.json";
-
-    // Додати посилання на сторінку
-    document.body.appendChild(a);
-
-    // Клікнути на посилання
-    a.click();
-
-    // Видалити посилання
-    document.body.removeChild(a);
-  }
 </script>
 </body>
 </html>
