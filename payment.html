@@ -257,9 +257,9 @@
                       <option value="Варшава">Варшава</option>
                       <option value="Париж">Париж</option>
                   </select>
+                  <p id="price">Ціна: </p>
               </div>
               <button class="purchase--btn" onclick="saveFormData()">Оплатити</button>
-                  <p id="price">Ціна: </p>
               </form>
               </div>
       </div>
@@ -299,11 +299,7 @@
 purchaseButton.addEventListener('click', () => {
     alert('Оплата успішно пройдена');
     alert("У випадку проблем, зв'яжіться з тех.підтримкою");
-    saveFormData(); // Викликайте saveFormData при кліці на кнопку "Оплатити"
 });
-
-
-
 </script>
 </body>
 </html>
