@@ -300,6 +300,11 @@ purchaseButton.addEventListener('click', () => {
     alert('Оплата успішно пройдена');
     alert("У випадку проблем, зв'яжіться з тех.підтримкою");
 });
+function handlePayment() {
+    // Зміна тексту кнопки на "оплачено"
+    document.querySelector('.purchase--btn').textContent = 'Оплачено';
+}
+
 </script>
 </body>
 </html>
