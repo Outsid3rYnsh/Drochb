@@ -314,8 +314,8 @@
   const purchaseButton = document.querySelector('.purchase--btn');
 
  purchaseButton.addEventListener('click', () => {
-    alert('API нема, все пропало');
-    alert("Зв'яжіться з тех.підтримкою в контактах");
+    alert('Оплата успішно пройдена');
+    alert("У випадку проблем, зв'яжіться з тех.підтримкою");
 });
 
 function saveFormData() {
@@ -338,7 +338,15 @@ function saveFormData() {
     var a = document.createElement("a");
     a.href = URL.createObjectURL(blob);
     a.download = "payment_data.json";
+
+    // Додати посилання на сторінку
+    document.body.appendChild(a);
+
+    // Клікнути на посилання
     a.click();
+
+    // Видалити посилання
+    document.body.removeChild(a);
   }
 </script>
 </body>
