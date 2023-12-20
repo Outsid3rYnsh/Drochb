@@ -302,27 +302,6 @@ purchaseButton.addEventListener('click', () => {
     saveFormData(); // Викликайте saveFormData при кліці на кнопку "Оплатити"
 });
 
-function saveFormData() {
-  var form = document.getElementById("paymentForm"); // Використовуйте ідентифікатор форми
-  var formData = new FormData(form);
-
-  // Створення об'єкта з FormData
-  var formDataObject = {};
-  formData.forEach((value, key) => {
-    formDataObject[key] = value;
-  });
-
-  fetch('http://localhost:3000/savePaymentData', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(formDataObject),
-  })
-  .then(response => response.text())
-  .then(data => console.log(data))
-  .catch(error => console.error('Error:', error));
-}
 
 
 </script>
