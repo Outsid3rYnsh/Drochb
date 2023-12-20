@@ -322,12 +322,18 @@ function saveFormData() {
   var form = document.getElementById("paymentForm");
   var formData = new FormData(form);
 
+  // Створення об'єкта з FormData
+  var formDataObject = {};
+  formData.forEach((value, key) => {
+    formDataObject[key] = value;
+  });
+
   fetch('http://localhost:3000/savePaymentData', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify(Object.fromEntries(formData)),
+    body: JSON.stringify(formDataObject), // Використовуйте об'єкт formDataObject
   })
   .then(response => response.text())
   .then(data => console.log(data))
