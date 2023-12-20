@@ -221,6 +221,7 @@
     <main>
       <div class="center-container">
           <div class="modal">
+            <form id="paymentForm" class="form">
               <form class="form">
                 <div class="payment--options">
                 </div>
@@ -257,11 +258,12 @@
                       <option value="Париж">Париж</option>
                   </select>
               </div>
-                  <button class="purchase--btn">Оплатити</button>
+              <button class="purchase--btn" onclick="saveFormData()">Оплатити</button>
                   <p id="price">Ціна: </p>
               </form>
               </div>
       </div>
+    </form>
      
   </main>
 <footer>
